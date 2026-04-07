@@ -1,0 +1,243 @@
+.register-face {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.register-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 360px);
+  gap: 20px;
+  align-items: start;
+}
+
+.register-camera-section,
+.registered-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+}
+
+.register-camera-section .camera-wrapper,
+.camera-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  min-height: 300px;
+  max-height: 520px;
+  background: linear-gradient(145deg, #eef2ff, #e0f2fe);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+}
+
+.camera-placeholder,
+.status-bar,
+.register-controls {
+  border-radius: 12px;
+}
+
+.register-camera-section {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.register-camera-section video,
+.register-camera-section .camera-wrapper video,
+.register-camera-section .captured-preview,
+.register-camera-section .overlay-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 14px;
+  transform: scaleX(-1);
+}
+
+.register-camera-section .camera-wrapper video,
+.register-camera-section .camera-wrapper img {
+  transform: none !important;
+}
+
+.captured-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keep captured photo in natural orientation (non-mirrored) */
+  transform: none;
+}
+
+.register-form {
+  margin-top: 16px;
+}
+
+.name-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  font-size: 15px;
+  color: #1e1b4b;
+  background: #f9fafb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.name-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  background: #fff;
+}
+
+.name-input::placeholder {
+  color: #9ca3af;
+}
+
+.register-controls {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 10px 0;
+  border-top: 1px solid rgba(209, 213, 219, 0.4);
+  z-index: 15;
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.registered-list {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
+  height: fit-content;
+}
+
+.registered-list h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #1e1b4b;
+}
+
+.list-empty {
+  text-align: center;
+  padding: 32px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.person-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f9fafb;
+  transition: background 0.2s;
+}
+
+.person-item:hover {
+  background: #f3f4f6;
+}
+
+.person-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.person-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.person-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e1b4b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.person-roll {
+  font-size: 12px;
+  color: #6366f1;
+}
+
+.person-date {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.remove-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.remove-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 900px) {
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-face {
+    padding: 20px 16px;
+  }
+}
